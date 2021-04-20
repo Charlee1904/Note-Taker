@@ -25,7 +25,7 @@ app.get('/api/notes',(req,res)=> {
 app.post('/api/notes',(req,res)=>{
    let newNote = req.body
    newNote.id = uuidv4(); // ⇨ '1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed'
-   const saveFs = JSON.parse(fs.readFileSync('db/db.json',"utf8"));
+   const saveFs = JSON.parse(fs.readFileSync('Develop/db/db.json',"utf8"));
     saveFs.push(newNote);
     console.log(saveFs)
     fs.writeFileSync('Develop/db/db.json',JSON.stringify(saveFs));
